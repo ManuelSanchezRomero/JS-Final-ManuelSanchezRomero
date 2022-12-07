@@ -2,14 +2,14 @@ let dias = 0
 let precio = 0
 
 function consultaDias(precio) {
-    let dias = parseInt(prompt("Cuantas dias quiere cotizar?: "));
+    let dias = parseInt(prompt("¿Cuantos dias quiere contratar?: "));
     //En caso de que ponga 0 dias
     while (dias <= 0) {
         dias = prompt("Ingrese una cantidad valida de dias");
     }
 
     //Consulta por servicio VIP
-    let vip = parseInt(prompt("Quieren el servicio vip? Ingrese 1 si lo quiere, o 0 si no"));
+    let vip = parseInt(prompt("¿Desea el servicio VIP? Ingrese 1 si lo quiere, o 0 si no"));
     let suma = dias * parseInt(precio);
     if (vip === 1) {
         suma += suma * 0.2;
