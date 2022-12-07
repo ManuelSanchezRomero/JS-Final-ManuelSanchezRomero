@@ -140,6 +140,7 @@ header {
 
 .card img:hover {
     display: flex;
+    align-content: flex-start;
     margin: 0;
     width: 450px;
     transition: 0.6s;
