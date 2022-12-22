@@ -1,6 +1,3 @@
-let dias = 0
-let precio = 0
-
 // Lista de productos
 function Lugares(nombre, precio) {
     this.nombre = nombre;
@@ -23,7 +20,10 @@ const stock = [gtav, mario, pokemon, zelda, got, hp, anillos, wakanda, bosque, u
 
 
 
-//Funcion del boton
+//Funcion del boton "Contratar"
+let dias = 0
+let precio = 0
+
 function consultaDias(precio) {
     let dias = parseInt(prompt("¿Cuantos dias quiere contratar?: "));
     //En caso de que ponga 0 dias
@@ -44,9 +44,12 @@ function consultaDias(precio) {
     //Imprimir en pantalla y en consola
     console.log(carrito);
     document.getElementById("carro").innerHTML = carrito
+
 }
 
-
+function info() {
+    alert("el servicio VIP tiene un recargo del 20% sobre el total")
+}
 //-----------------------------------------------BORRADOR ----------------------------------------------------------------------
 
 
