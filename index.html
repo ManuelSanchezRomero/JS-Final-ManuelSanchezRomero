@@ -5,31 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <title>VRavel</title>
+    <title> VRavel </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
     </header>
+
+    <!--  DESPLEGABLE  -->
     <div class="respmenu">
-        <label for="burguer"><img class="carro" src="carro.png"/>  -desplegame -</label>
+        <label for="burguer"> - CARGA DE PRODUCTOS NUEVOS -</label>
         <input type="checkbox" id="burguer">
         <i class="fas fa-bars"></i>
         <i class="fas fa-times"></i>
-        <nav>
+        <nav class="carga">
             <!--ACA VA EL CONTENIDO DEL DESPLEGABLE-->
-            <div id="carro">
-                <P>-- Todavia no selecionaste items --</P>
-            </div>
+            <label for="id" class="label-input">ID:</label>
+            <input type="text" name="id" id="id" placeholder="Introducir: ID" class="input-carga"><br>
+            <label for="nombre" class="label-input">NOMBRE:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Introducir: NOMBRE" class="input-carga"><br>
+            <label for="tipo" class="label-input">TIPO:</label>
+            <input type="text" name="tipo" id="tipo" placeholder="Introducir: TIPO" class="input-carga"><br>
+            <label for="precio" class="label-input">PRECIO:</label>
+            <input type="text" name="precio" id="precio" placeholder="Introducir: PRECIO" class="input-carga"><br>
+            <label for="img" class="label-input">IMG:</label>
+            <input type="file" name="img" id="img" class="input-carga">
+
+
+
+
+
             <br>
             <div class="comprar">
-                <button class="btn-hover color-9">FINALIZAR</button>
+                <button class="btn-hover color-9" onclick="crearProducto(id, nombre, tipo, precio, img)">FINALIZAR</button>
             </div>
         </nav>
         <hr class="hr-carro">
     </div>
+
+    <!--  ENCABEZADO   -->
     <div class="encabezado">
         <h2>Bienvenidos a VRavel</h2>
         <p>Somos un servicio de viajes a través de la realidad virtual con el objetivo de que puedas llegar a donde siempre quisiste ir...</p>
@@ -37,149 +54,48 @@
         <strong> "EL LIMITE ES TU IMAGINACIÓN"</strong>
     </div>
 
+    <!--   MODAL -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btnModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    CARRO
+    </button>
 
-    <section class="tienda">
-        <H2 class="neon cat1">Juegos</H2>
-        <div class="div1 card">
-            <img src="./img/juegos/gta.jpg" alt="">
-            <h3>Los Santos
-                <br>(GTA V)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$4000/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(gtav.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content Modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-1 tituloModal" id="exampleModalLabel">Carro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-        </div>
-        <div class="div2 card">
-            <img src="./img/juegos/mario.jpg" alt="">
-            <h3>Reino Champinion <br>(Mario)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$4200/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(mario.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary finalizar"> <a href="final.html">Finalizar</a> </button>
+                </div>
             </div>
+        </div>
+    </div>
 
 
-        </div>
-        <div class="div3 card">
-            <img src="./img/juegos/pokemon.png" alt="">
-            <h3>Area Silvestre <br> (Pokemon)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$4300/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(pokemon.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
 
-        </div>
-        <div class="div4 card">
-            <img src="./img/juegos/zelda.jpg" alt="">
-            <h3>Hyrule <br>(Zelda)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$4500/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(zelda.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
+    <!--  ESPACIO DE CARTAS GENERADAS DESDE JS -->
+    <main class="row col-12 gap-4" id="contenedor">
 
-        <h2 class="neon cat2">Series y Peliculas</h2>
-        <div class="div5 card">
-            <img src="./img/peliculas/got.jpg" alt="">
-            <h3>King's Landing <br> (GoT)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$5000/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(got.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-        <div class="div6 card">
-            <img src="./img/peliculas/hogwats.jpg" alt="">
-            <h3>Hogwarts <br> (Harry Potter)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$9000/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(hp.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-        <div class="div7 card">
-            <img src="./img/peliculas/sranillos.jpg" alt="">
-            <h3>Los Argonah <br> (El Señor de los Anillos)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$6000/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(anillos.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-        <div class="div8 card">
-            <img src="./img/peliculas/wakanda.jpeg" alt="">
-            <h3>Wakanda <br> (Marvel)</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$6500/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(wakanda.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-
-        <h2 class="neon cat3">Destinos Especiales</h2>
-        <div class="div9 card">
-            <img src="./img/especial/bosque.jpg" alt="">
-            <h3>Bosque Encantado</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$8000/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(bosque.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-        <div class="div10 card">
-            <img src="./img/especial/espacio.jpg" alt="">
-            <h3>El Universo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$7500/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(univ.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-        <div class="div11 card">
-            <img src="./img/especial/futuro.jpg" alt="">
-            <h3>El Futuro</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$8200/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(futuro.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-        <div class="div12 card">
-            <img src="./img/especial/hospital.jpg" alt="">
-            <h3>Hospital Abandonado</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam, hic inventore illo quas earum illum eum molestiae cumque tempore. Ipsam harum est distinctio, fugiat magnam asperiores debitis amet atque?</p>
-            <p class="valor">$9500/dia</p>
-            <div class="boton">
-                <button class="custom-btn btn-3" onClick="consultaDias(hosp.precio)"><span>Contratar</span></button>
-                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
-            </div>
-        </div>
-
-    </section>
-    <hr>
+    </main>
+    <br>
+    <br>
+    <!--   FOOTER     -->
     <footer class="footer-distributed">
 
         <div class="footer-right">
 
-            <a href="#"><img src="facebook.png" alt=""><i class="fa fa-facebook"></i></a>
-            <a href="#"><img src="github.png" alt=""><i class="fa fa-twitter"></i></a>
-            <a href="#"><img src="twitter.png" alt=""><i class="fa fa-linkedin"></i></a>
-            <a href="#"><img src="instagram.png" alt=""><i class="fa fa-github"></i></a>
+            <a href="#"><img src="./img/facebook.png" alt=""><i class="fa fa-facebook"></i></a>
+            <a href="#"><img src="./img/github.png" alt=""><i class="fa fa-twitter"></i></a>
+            <a href="#"><img src="./img/twitter.png" alt=""><i class="fa fa-linkedin"></i></a>
+            <a href="#"><img src="./img/instagram.png" alt=""><i class="fa fa-github"></i></a>
 
         </div>
 
@@ -199,15 +115,57 @@
                 <a href="#">Contacto</a>
             </p>
             <br>
-            <p> VRavel &copy; 2022</p>
+            <p> VRavel &copy; 2023</p>
         </div>
-
     </footer>
 
-
-
-
-    <script src="mian.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card mt-3" style="width: 18rem;">
+            <img src="" class="card-img-top mt-2" alt="...">
+            <div class="card-body">
+                <h3 class="card-title neon">Card title</h3>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+                <div class="boton">
+                    <button class="custom-btn btn-3" onClick="consultaDias(gtav.precio)"><span>Contratar</span></button>
+                    <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
+                </div>
+            </div>
+        </div> -->
+<!-- 
+        `
+        <div class="card mt-3" style="width: 18rem;">
+            <img class="card-img-top mt-2" src="${img}" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">${nombre}</h3>
+                <p class="card-text">Pack x 3 dias: ${precio}</p>
+                <button class="custom-btn btn-3" onclick="agregarProducto(${id})">Comprar</button>
+                <button class="custom-btn btn-3" onClick="info()"><span>More Info</span></button>
+            </div>
+        </div>
+        ` -->
