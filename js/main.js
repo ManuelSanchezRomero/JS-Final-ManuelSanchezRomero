@@ -1,116 +1,34 @@
-const stockProductos = [{
-        id: 0,
-        nombre: "GTA 5",
-        tipo: "(JUEGO)",
-        precio: 4000,
-        img: "./img/juegos/gta.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 1,
-        nombre: "Mario",
-        tipo: "(JUEGO)",
-        precio: 4200,
-        img: "./img/juegos/mario.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 2,
-        nombre: "Pokemon",
-        tipo: "(JUEGO)",
-        precio: 4300,
-        img: "./img/juegos/pokemon.png",
-        cantidad: 4,
-    },
-    {
-        id: 3,
-        nombre: "Zelda",
-        tipo: "(JUEGO)",
-        precio: 4500,
-        img: "./img/juegos/zelda.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 4,
-        nombre: "Game of Thrones",
-        tipo: "(PELICULA/SERIE)",
-        precio: 5000,
-        img: "./img/peliculas/got.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 5,
-        nombre: "Harry Potter",
-        tipo: "(PELICULA/SERIE)",
-        precio: 9000,
-        img: "./img/peliculas/hogwats.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 6,
-        nombre: "Señor de los Anillos",
-        tipo: "(PELICULA/SERIE)",
-        precio: 6000,
-        img: "./img/peliculas/sranillos.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 7,
-        nombre: "Wakanda",
-        tipo: "(PELICULA/SERIE)",
-        precio: 6500,
-        img: "./img/peliculas/wakanda.jpeg",
-        cantidad: 4,
-    },
-    {
-        id: 8,
-        nombre: "Bosque Encantado",
-        tipo: "(ESPECIAL)",
-        precio: 8000,
-        img: "./img/especial/bosque.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 9,
-        nombre: "Universo",
-        tipo: "(ESPECIAL)",
-        precio: 7500,
-        img: "./img/especial/espacio.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 10,
-        nombre: "Futuro",
-        tipo: "(ESPECIAL)",
-        precio: 8200,
-        img: "./img/especial/futuro.jpg",
-        cantidad: 4,
-    },
-    {
-        id: 11,
-        nombre: "Hospital Abandonado",
-        tipo: "(ESPECIAL)",
-        precio: 9500,
-        img: "./img/especial/hospital.jpg",
-        cantidad: 4,
-    },
-];
-const aJson = JSON.stringify(stockProductos)
+// Lista de productos
+function Lugares(nombre, precio) {
+    this.nombre = nombre;
+    this.precio = precio;
+}
+const gtav = new Lugares("#GTA5", 4000);
+const mario = new Lugares("#Mario", 4200);
+const pokemon = new Lugares("#Pokemon", 4300);
+const zelda = new Lugares("#Zelda", 4500);
+const got = new Lugares("#GoT", 5000);
+const hp = new Lugares("#HarryPotter", 9000);
+const anillos = new Lugares("#SeñordelosAnillos", 6000);
+const wakanda = new Lugares("#Wakanda", 6500);
+const bosque = new Lugares("#BosqueEncantado", 8000);
+const univ = new Lugares("#Universo", 7500);
+const futuro = new Lugares("#Futuro", 8200);
+const hosp = new Lugares("#HospitalAbandonado", 9500);
+const stock = [gtav, mario, pokemon, zelda, got, hp, anillos, wakanda, bosque, univ, futuro, hosp]
+
+
+
+const aJson = JSON.stringify(stock)
 localStorage.setItem('Productos', aJson)
 let deJson = JSON.parse(localStorage.getItem('Productos'))
 console.log(deJson);
 
-// function crearProducto(id, nombre, tipo, precio, img) {
-//     id = document.querySelector('#id').value;
-//     nombre = document.querySelector('#nombre').value;
-//     tipo = document.querySelector('#tipo').value;
-//     precio = document.querySelector('#precio').value;
-//     img = document.querySelector('#img').value;
 
-//     stockProductos.push()
-// }
-
+//array valores
 let carrito = [];
+
+//array descriptivo de los productos seleccionados
 let descripcion = [];
 
 
@@ -119,28 +37,31 @@ const carritoContenedor = document.querySelector('#carritoContenedor');
 const vaciarCarrito = document.querySelector('#vaciarCarrito');
 const precioTotal = document.querySelector('#precioTotal');
 
-stockProductos.forEach((prod) => {
-    const { id, nombre, precio, tipo, img } = prod;
-    if (contenedor) {
-        contenedor.innerHTML += `
-        <div class="card mt-3" style="width: 23rem;">
-        <img class="card-img-top mt-2" src="${img}" alt="producto">
-        <div class="card-body">
-            <h3 class="card-title neon">${nombre}</h3>
-            <p class="card-text neon"> ${tipo}</p>
-            <p class="card-text valor">Valor por dia: $${precio}</p>
-            <input type="text" name="dias" id="dias" placeholder="Dias a contratar" class="dias">
-            <br>
-            <button class="custom-btn btn-3" onclick="agregarProducto(${precio})">Agregar al carro</button>
-        </div>
-    </div>
-        `;
-    }
-});
 
-function agregarProducto(precio) {
+//creacion de cartas de productos
+// stockProductos.forEach((prod) => {
+//     const { id, nombre, precio, tipo, img } = prod;
+//     if (contenedor) {
+//         contenedor.innerHTML += `
+//         <div class="card mt-3" style="width: 23rem;">
+//         <img class="card-img-top mt-2" src="${img}" alt="producto">
+//         <div class="card-body">
+//             <p class="borrar"> ${id} </p>
+//             <h3 class="card-title neon">${nombre}</h3>
+//             <p class="card-text neon"> ${tipo}</p>
+//             <p class="card-text valor">Valor por dia: $${precio}</p>
+//             <input type="text" name="dias" id="dias" placeholder="Dias a contratar" class="dias">
+//             <br>
+//             <button class="custom-btn btn-3" onclick="agregarProducto(${precio})">Agregar al carro</button>
+//         </div>
+//     </div>
+//         `;
+//     }
+// });
+//funcionalidad del boton para agregar al carro
+function agregarProducto(precio, nombre) {
 
-    let dias = document.querySelector('#dias').value;
+    let dias = document.querySelector(nombre).value;
     let suma = precio * dias;
     let resultado = "$" + precio + " x " + dias + " dias= $" + suma;
 
@@ -148,7 +69,7 @@ function agregarProducto(precio) {
     carrito.push(suma);
     descripcion.push(resultado);
 
-    localStorage.setItem('Articulos', carrito)
+    localStorage.setItem('Articulos', descripcion)
 
     let total = 0
     carrito.forEach(function(a) {
@@ -158,17 +79,38 @@ function agregarProducto(precio) {
     localStorage.setItem('Total', total)
 
 
+    mostrarCarrito();
 
-
+    //Contenido del carro
     function mostrarCarrito() {
-        const modalBody = document.querySelector('.modal .modal-body')
-        if (modalBody) {
-            carrito.forEach(() => {
-                modalBody.innerHTML = `
-                <div> ${descripcion} </div> <br><br>
-                <div id="calculoTotal" class="total"> Total: $${total}</div> `
-            })
-        }
+
+        //descripcion del contenido del carro
+        document.getElementById('modal-carro').innerHTML = ""
+        descripcion.forEach(function(element) {
+            document.getElementById('modal-carro').innerHTML += `<p> ${element} </p>`;
+        });
+
+        //suma del valor total
+        document.getElementById('modal-total').innerHTML = ` <p>Total: $${total}</p>`
     }
-    mostrarCarrito()
 }
+
+
+// // AGREGAR PRODUCCTOS DESDE EL HTML
+
+// function crearProducto(id, nombre, tipo, precio, img) {
+//     let id = document.querySelector('#id').value;
+//     let nombre = document.querySelector('#nombre').value;
+//     let tipo = document.querySelector('#tipo').value;
+//     let precio = document.querySelector('#precio').value;
+//     let img = document.querySelector('#img').value;
+
+//     this.id = id;
+//     this.nombre = nombre;
+//     this.tipo = tipo;
+//     this.precio = precio;
+//     this.img = img;
+
+
+//     stockProductos.push()
+// }

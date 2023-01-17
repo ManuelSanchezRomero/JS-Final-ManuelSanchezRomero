@@ -260,6 +260,10 @@ nav {
 
 /* -------------- CARTAS --------------------*/
 
+.borrar {
+    display: none;
+}
+
 .card {
     margin-left: 70px;
     gap: 30px;
