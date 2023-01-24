@@ -5,6 +5,87 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* -------------------------------------------------------------------------- INDEX HTML ------------------------------------------------------------------------------------------- */
+
+.index-bg {
+    background-color: #000000e7;
+}
+
+.h1-index {
+    text-decoration: none;
+    font-size: 100px;
+}
+
+.index-box {
+    width: 70%;
+    background-color: rgb(0, 0, 0);
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: antiquewhite;
+    gap: 30px;
+    border: 1px solid rgba(211, 211, 211, 0);
+    box-shadow: 2px 2px 12px 6px #0066ffd1;
+    border-radius: 15px;
+    font-family: sans-serif;
+    padding: 30px;
+}
+
+.index-loggin {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.index-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*-----------------------------------BOTON index -----------------------------------*/
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-9 {
+    background-image: linear-gradient(to right, #2551e1, #2d63c2, #0470fe, #033e96);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+
+/* ------------------------------------------------------------------------- TIENDA HTML --------------------------------------------------------------------------------------------*/
+
 body {
     background: rgb(0, 0, 0);
 }
@@ -48,160 +129,6 @@ header {
     margin-bottom: 10px;
     text-align: center;
     border-bottom-style: solid;
-}
-
-
-/* ---------------------------------- DESPLEGABLE -------------------------------------- */
-
-label {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-.hr-carro {
-    margin: 0;
-    color: none;
-    background: rgb(0, 35, 255);
-    background: radial-gradient(circle, rgba(0, 35, 255, 1) 0%, rgba(0, 0, 0, 1) 87%);
-}
-
-.carro {
-    width: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.respmenu a {
-    color: inherit;
-    font-size: 25px;
-    text-decoration: none;
-    display: block;
-    padding: 10px 20px;
-    border-bottom: 2px solid #456789;
-    max-width: 200px;
-    font-variant: small-caps;
-    text-shadow: 1px 1px black;
-}
-
-.respmenu input[type="checkbox"],
-.respmenu .fa-bars,
-.respmenu .fa-times {
-    position: absolute;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    right: 0;
-    top: 0;
-    width: 48px;
-    height: 48px;
-}
-
-.respmenu .fa-bars,
-.respmenu .fa-times {
-    font-size: 48px;
-    pointer-events: none;
-}
-
-.respmenu input[type="checkbox"] {
-    opacity: 0;
-}
-
-.respmenu {
-    color: white;
-    position: relative;
-    background: rgb(76, 99, 241);
-    background: radial-gradient(circle, rgba(76, 99, 241, 1) 0%, rgba(0, 0, 0, 1) 87%);
-    min-height: 48px;
-}
-
-.respmenu nav {
-    display: none;
-}
-
-.respmenu input:checked~nav {
-    display: block;
-}
-
-.respmenu input:checked~.fa-bars {
-    display: none;
-}
-
-.respmenu input:not(:checked)~.fa-times {
-    display: none;
-}
-
-.comprar {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-#carro {
-    color: rgb(199, 199, 199);
-    padding: 20px;
-    font-size: 30px;
-    font-style: italic;
-}
-
-nav {
-    display: flex;
-    justify-self: center;
-}
-
-.input-carga {
-    display: flex;
-    margin: 0px 0 20px 40px;
-}
-
-.carga {
-    display: flex;
-    justify-content: center;
-}
-
-.label-input {
-    color: whitesmoke;
-    display: flex;
-    justify-content: left;
-    margin-left: 10px;
-}
-
-
-/*-----------------------------------BOTON DESPLEGABLE -----------------------------------*/
-
-.btn-hover {
-    width: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align: center;
-    border: none;
-    background-size: 300% 100%;
-    border-radius: 50px;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:hover {
-    background-position: 100% 0;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:focus {
-    outline: none;
-}
-
-.btn-hover.color-9 {
-    background-image: linear-gradient(to right, #2551e1, #2d63c2, #0470fe, #033e96);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 }
 
 
@@ -526,4 +453,11 @@ p {
 
 .footer-distributed p.footer-links a:hover {
     text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------------------------- FINAL HTML ------------------------------------------------------------------------------------ */
+
+.final-bg {
+    background-color: #000000af;
 }

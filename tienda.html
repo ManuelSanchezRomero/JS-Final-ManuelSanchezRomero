@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> VRavel </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+    </header>
+
+
+    <!--  ENCABEZADO   -->
+    <div class="encabezado">
+        <h2>Bienvenidos a VRavel</h2>
+        <p>Somos un servicio de viajes a través de la realidad virtual con el objetivo de que puedas llegar a donde siempre quisiste ir...</p>
+        <br>
+        <strong> "EL LIMITE ES TU IMAGINACIÓN"</strong>
+    </div>
+    <br>
+    <!--   MODAL -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btnModal position-relative top-100 start-50 translate-middle" data-bs-toggle="modal" data-bs-target="#exampleModal">CARRO</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content Modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-1 tituloModal" id="exampleModalLabel">Carro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- lista del carro -->
+                <div class="modal-carro" id="modal-carro"><br>
+                    <p>-- No has agregado nada al carro --</p><br>
+                </div>
+                <!-- calculo total -->
+                <div class="modal-total" id="modal-total"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary finalizar"> <a href="final.html">Finalizar</a> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  ESPACIO DE CARTAS GENERADAS DESDE JS -->
+    <main class="row col-12 gap-4" id="contenedor">
+        <!-- 1 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/juegos/gta.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">GTA V</h3>
+                <p class="card-text neon"> (JUEGO)</p>
+                <p class="card-text valor">Valor por dia: $4000</p>
+                <input type="text" name="dias" id="GTA5" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(gtav.precio, gtav.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/juegos/mario.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Mario</h3>
+                <p class="card-text neon">(JUEGO) </p>
+                <p class="card-text valor">Valor por dia: $4200</p>
+                <input type="text" name="dias" id="Mario" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(mario.precio, mario.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 3 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/juegos/pokemon.png" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Pokemon</h3>
+                <p class="card-text neon"> (JUEGO)</p>
+                <p class="card-text valor">Valor por dia: $4300</p>
+                <input type="text" name="dias" id="Pokemon" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(pokemon.precio, pokemon.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 4 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/juegos/zelda.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Zelda</h3>
+                <p class="card-text neon">(JUEGO) </p>
+                <p class="card-text valor">Valor por dia: $4500</p>
+                <input type="text" name="dias" id="Zelda" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(zelda.precio, zelda.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 5 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/peliculas/got.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Game of Thrones</h3>
+                <p class="card-text neon">(PELICULA/SERIE) </p>
+                <p class="card-text valor">Valor por dia: $5000</p>
+                <input type="text" name="GoT" id="dias" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(got.precio, got.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 6 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/peliculas/hogwats.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Harry Potter</h3>
+                <p class="card-text neon">(PELICULA/SERIE) </p>
+                <p class="card-text valor">Valor por dia: $9000</p>
+                <input type="text" name="dias" id="HarryPotter" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(hp.precio, hp.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 7 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/peliculas/sranillos.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Señor de los Anillos</h3>
+                <p class="card-text neon">(PELICULA/SERIE) </p>
+                <p class="card-text valor">Valor por dia: $6000</p>
+                <input type="text" name="dias" id="SeñordelosAnillos" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(anillos.precio, anillos.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 8 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/peliculas/wakanda.jpeg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Wakanda</h3>
+                <p class="card-text neon">(PELICULA/SERIE) </p>
+                <p class="card-text valor">Valor por dia: $6500</p>
+                <input type="text" name="dias" id="Wakanda" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(wakanda.precio, wakanda.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 9 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/especial/bosque.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Bosque Encantado</h3>
+                <p class="card-text neon"> (ESPECIAL)</p>
+                <p class="card-text valor">Valor por dia: $8000</p>
+                <input type="text" name="dias" id="BosqueEncantado" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(bosque.precio, bosque.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 10 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/especial/espacio.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Universo</h3>
+                <p class="card-text neon">(ESPECIAL) </p>
+                <p class="card-text valor">Valor por dia: $7500</p>
+                <input type="text" name="dias" id="Universo" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(univ.precio, univ.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 11 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/especial/futuro.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">El Futuro</h3>
+                <p class="card-text neon"> (ESPECIAL)</p>
+                <p class="card-text valor">Valor por dia: $8200</p>
+                <input type="text" name="dias" id="Futuro" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(futuro.precio, futuro.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+        <!-- 12 -->
+        <div class="card mt-3" style="width: 23rem;">
+            <img class="card-img-top mt-2" src="./img/especial/hospital.jpg" alt="producto">
+            <div class="card-body">
+                <h3 class="card-title neon">Hospital Abandonado</h3>
+                <p class="card-text neon"> (ESPECIAL)</p>
+                <p class="card-text valor">Valor por dia: $9500</p>
+                <input type="text" name="dias" id="HospitalAbandonado" placeholder="Dias a contratar" class="dias">
+                <br>
+                <button class="custom-btn btn-3" onclick="agregarProducto(hosp.precio, hosp.nombre)">Agregar al carro</button>
+            </div>
+        </div>
+
+    </main>
+    <br>
+    <br>
+    <!--   FOOTER     -->
+    <footer class="footer-distributed">
+        <div class="footer-right">
+            <a href="#"><img src="./img/facebook.png" alt=""><i class="fa fa-facebook"></i></a>
+            <a href="#"><img src="./img/github.png" alt=""><i class="fa fa-twitter"></i></a>
+            <a href="#"><img src="./img/twitter.png" alt=""><i class="fa fa-linkedin"></i></a>
+            <a href="#"><img src="./img/instagram.png" alt=""><i class="fa fa-github"></i></a>
+        </div>
+        <div class="footer-left">
+            <p class="footer-links">
+                <a class="link-1" href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Blog</a>
+                <a href="#">Legal</a>
+                <a href="#">Faq</a>
+                <a href="#">Contacto</a>
+            </p>
+            <br>
+            <p> VRavel &copy; 2023</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
