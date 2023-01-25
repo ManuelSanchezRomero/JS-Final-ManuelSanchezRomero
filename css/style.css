@@ -137,7 +137,6 @@ header {
 .encabezado {
     color: rgb(226, 235, 247);
     text-align: center;
-    padding: auto;
     font-family: sans-serif;
     font-style: italic;
 }
@@ -166,8 +165,8 @@ header {
 .btnModal {
     display: flex;
     justify-content: center;
-    margin: 20px;
     width: 500px;
+    margin-top: 50px;
 }
 
 .btnModal:hover {
@@ -180,8 +179,8 @@ header {
 }
 
 .finalizar a {
-    text-decoration: none;
     color: #ffffff;
+    text-decoration: none;
 }
 
 
@@ -219,9 +218,6 @@ header {
     transform: scale(1.30);
     transition: 0.5s;
     border-radius: 15px;
-    /* width: 408px;
-
-    translate: 0%; */
 }
 
 .card h3,
@@ -459,5 +455,36 @@ p {
 /* ------------------------------------------------------------------------------- FINAL HTML ------------------------------------------------------------------------------------ */
 
 .final-bg {
-    background-color: #000000af;
+    background-color: #000000;
+    color: antiquewhite;
+}
+
+.h1_final {
+    text-decoration: none;
+    margin: 20px;
+    font-size: 50px;
+}
+
+.hr-final {
+    background-color: white;
+    height: 3px;
+}
+
+.dom-carro {
+    font-size: 30px;
+    padding: 10px;
+    font-style: italic;
+}
+
+.dom-total {
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.numero {
+    font-size: 60px;
+    display: flex;
+    align-items: end;
 }
