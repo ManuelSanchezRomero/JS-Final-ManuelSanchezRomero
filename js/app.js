@@ -102,22 +102,28 @@ const carritoContador = document.querySelector('#carritoContador');
 const precioTotal = document.querySelector('#precioTotal');
 
 
+
+
+
+
+
+
 // GENERAR LAS CARTAS
 function generarCarta(array) {
     array.forEach((prod) => {
         const { id, nombre, precio, tipo, img, cantidad } = prod;
         if (contenedor) {
             contenedor.innerHTML += `
-        <div class="card mt-3" style="width: 23rem;">
+    <div class="card mt-3" style="width: 23rem;">
         <img class="card-img-top mt-2" src="${img}" alt="producto">
         <div class="card-body">
-      <h3 class="card-title neon">${nombre}</h3>
-      <p class="card-title neon">${tipo}</9>
-      <p class="card-text">Precio: ${precio}</p>
-      <p class="card-text">Cantidad: ${cantidad}</p>
-      <button class="custom-btn btn-3" onclick="agregarProducto(${id})">Agregar producto</button>
+            <h3 class="card-title neon">${nombre}</h3>
+            <p class="card-title neon">${tipo}</9>
+            <p class="card-text info-carta">Precio: ${precio}</p>
+            <p class="card-text info-carta">Cantidad: ${cantidad}</p>
+            <button class="custom-btn btn-3" onclick="agregarProducto(${id})">Agregar producto</button>
+        </div>
     </div>
-  </div>
     `;
         }
     })
@@ -128,6 +134,9 @@ fetch('../data/data.json')
     .then((data) => {
         generarCarta(data)
     });
+
+
+
 
 
 // AGREGAR PRODUCTOS AL CARRO
@@ -146,8 +155,7 @@ function agregarProducto(id) {
         carrito.push(item)
     }
 
-    const aJson = JSON.stringify(carrito)
-    localStorage.setItem('carrito', aJson)
+
     mostrarCarrito()
 }
 // MOSTRAR CARTAS EN EL CARRO
@@ -171,12 +179,13 @@ const mostrarCarrito = () => {
             <p> ${tipo}</p>
             <p>Valor: ${precio}</p>
             <p>Cantidad: ${cantidad}</p>
-            <button onclick="eliminarProducto(${id})" class="btn btn-danger">Eliminar Producto</button> 
+            <button onclick="eliminarProducto(${id})" class="btn btn-danger" id="btnEliminar">Eliminar Producto</button> 
         <div>
     <br>
 `
         })
-
+        const aJson = JSON.stringify(carrito)
+        localStorage.setItem('carrito', aJson)
 
         //contador del carrito
         carritoContador.textContent = carrito.length;
@@ -190,3 +199,42 @@ function eliminarProducto(id) {
     carrito = carrito.filter((lugar) => lugar.id !== lugarId)
     mostrarCarrito();
 }
+
+
+
+
+
+
+
+// CARGAR CARRO EN HTML "FINAL"
+
+let final_carro = localStorage.getItem("carrito")
+const finalCarrito = () => {
+    const modalBody = document.querySelector('.dom-carro')
+    const carritoZ = localStorage.getItem('carrito')
+    const carritoX = JSON.parse(carritoZ);
+    modalBody.innerHTML = '' //limpio html 
+    carritoX.forEach((prod) => {
+        const { nombre, img, cantidad, precio, tipo } = prod
+        modalBody.innerHTML +=
+            `
+            <hr class= "hrCarroFinal">
+    <div class="final-contenedor">
+        <div>
+            <img class="img-fluid img-final" src="${img}"/>
+        </div>
+        <div>
+            <p>${nombre}</p>
+            <p> ${tipo}</p>
+            <p>Valor: ${precio}</p>
+            <p class="neon">Cantidad: ${cantidad}</p>
+        </div>
+    </div>
+`
+    })
+
+    const finalTotal = document.querySelector('.dom-total');
+    finalTotal.textContent = "Total a pagar: $" + carritoX.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0);
+
+}
+finalCarrito();

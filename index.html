@@ -19,16 +19,21 @@
             <H1 class="neon h1-index">VRavel</H1>
         </div>
         <div class="index-loggin">
-            <label for="loggin_name">Ingresa tu nombre:</label>
-            <input type="text" name="loggin_name" id="index_text"><br>
-            <label for="recordar">Recordar</label>
-            <input type="checkbox" name="recordar" id="check"><br>
-            <button class="btn-hover color-9 index-btn"><a href="./pages/tienda.html">ENTRAR</a></button>
+            <label for="loggin_mail">Mail:</label>
+            <input type="email" name="loggin_mail" id="logginMail" placeholder="ejemplo@mail.com"><br>
+            <label for="loggin_pass">Contraseña:</label>
+            <input type="password" name="loggin_pass" id="logginPass" placeholder="Contraseña"><br>
+            <div class="checkbox">
+                <p>Recordame</p><input type="checkbox" name="recordar" id="check">
+            </div>
+            <br>
+            <button class="btn-hover color-9 index-btn" id="btnLoggin"><a href="./pages/tienda.html">ENTRAR</a></button>
+
         </div>
-    </div>
-    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="./js/app.js"></script>
+        <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/app.js"></script>
 </body>
 
 </html>

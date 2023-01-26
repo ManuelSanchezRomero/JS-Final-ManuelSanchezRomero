@@ -45,6 +45,18 @@
     color: white;
 }
 
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.checkbox p {
+    padding-top: 14px;
+}
+
 
 /*-----------------------------------BOTON index -----------------------------------*/
 
@@ -470,7 +482,20 @@ p {
     height: 3px;
 }
 
+.final-contenedor {
+    display: flex;
+}
+
+.img-final {
+    width: 23rem;
+    margin: 0 10px;
+}
+
 .dom-carro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     font-size: 30px;
     padding: 10px;
     font-style: italic;
@@ -483,8 +508,11 @@ p {
     justify-content: center;
 }
 
-.numero {
-    font-size: 60px;
-    display: flex;
-    align-items: end;
+.boton-final {
+    margin: 50px 0 0 0;
+}
+
+.hrCarroFinal {
+    color: #0470fe;
+    width: 50%;
 }
