@@ -111,7 +111,7 @@ const precioTotal = document.querySelector('#precioTotal');
 // GENERAR LAS CARTAS
 function generarCarta(array) {
     array.forEach((prod) => {
-        const { id, nombre, precio, tipo, img, cantidad } = prod;
+        const { id, nombre, precio, tipo, img } = prod;
         if (contenedor) {
             contenedor.innerHTML += `
     <div class="card mt-3" style="width: 23rem;">
@@ -119,9 +119,10 @@ function generarCarta(array) {
         <div class="card-body">
             <h3 class="card-title neon">${nombre}</h3>
             <p class="card-title neon">${tipo}</9>
-            <p class="card-text info-carta">Precio: ${precio}</p>
-            <p class="card-text info-carta">Cantidad: ${cantidad}</p>
-            <button class="custom-btn btn-3" onclick="agregarProducto(${id})">Agregar producto</button>
+            <p class="card-text info-carta">Precio: $${precio} x dia</p>
+
+            <button class="custom-btn btn-3" onclick="agregarProducto(${id})" id="btnAgregar">Agregar producto</button>
+            <p class= "aclaracion">(Se agregará un dia por "click" al boton)</p>
         </div>
     </div>
     `;
@@ -158,6 +159,8 @@ function agregarProducto(id) {
 
     mostrarCarrito()
 }
+
+
 // MOSTRAR CARTAS EN EL CARRO
 const mostrarCarrito = () => {
         const modalBody = document.querySelector('.modal .modal-body')
@@ -177,7 +180,7 @@ const mostrarCarrito = () => {
         <div>
             <p>Nombre: ${nombre}</p>
             <p> ${tipo}</p>
-            <p>Valor: ${precio}</p>
+            <p>Valor: $${precio}</p>
             <p>Cantidad: ${cantidad}</p>
             <button onclick="eliminarProducto(${id})" class="btn btn-danger" id="btnEliminar">Eliminar Producto</button> 
         <div>
@@ -227,7 +230,7 @@ const finalCarrito = () => {
             <p>${nombre}</p>
             <p> ${tipo}</p>
             <p>Valor: ${precio}</p>
-            <p class="neon">Cantidad: ${cantidad}</p>
+            <p class="neon">Cantidad de dias: ${cantidad}</p>
         </div>
     </div>
 `

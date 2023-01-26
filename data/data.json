@@ -3,95 +3,93 @@
         "nombre": "GTA V",
         "tipo": "(JUEGO)",
         "precio": 4000,
-        "img": "../img/juegos/gta.jpg",
-        "cantidad": "por dia"
+        "img": "../img/juegos/gta.jpg"
     },
     {
         "id": 2,
         "nombre": "Mario",
         "tipo": "(JUEGO)",
         "precio": 4200,
-        "img": "../img/juegos/mario.jpg",
-        "cantidad": "por dia"
+        "img": "../img/juegos/mario.jpg"
+
     },
     {
         "id": 3,
         "nombre": "Pokemon",
         "tipo": "(JUEGO)",
         "precio": 4300,
-        "img": "../img/juegos/pokemon.png",
-        "cantidad": "por dia"
+        "img": "../img/juegos/pokemon.png"
+
     },
     {
         "id": 4,
         "nombre": "Zelda",
         "tipo": "(JUEGO)",
         "precio": 4500,
-        "img": "../img/juegos/zelda.jpg",
-        "cantidad": "por dia"
+        "img": "../img/juegos/zelda.jpg"
+
     },
     {
         "id": 5,
         "nombre": "Game of Thrones",
         "tipo": "(PELICULA/SERIE)",
         "precio": 5000,
-        "img": "../img/peliculas/got.jpg",
-        "cantidad": "por dia"
+        "img": "../img/peliculas/got.jpg"
+
     },
     {
         "id": 6,
         "nombre": "Harry Potter",
         "tipo": "(PELICULA/SERIE)",
         "precio": 9000,
-        "img": "../img/peliculas/hogwats.jpg",
-        "cantidad": "por dia"
+        "img": "../img/peliculas/hogwats.jpg"
+
     },
     {
         "id": 7,
         "nombre": "El Señor de los Anillos",
         "tipo": "(PELICULA/SERIE)",
         "precio": 6000,
-        "img": "../img/peliculas/sranillos.jpg",
-        "cantidad": "por dia"
+        "img": "../img/peliculas/sranillos.jpg"
     },
     {
         "id": 8,
         "nombre": "Wakanda",
         "tipo": "(PELICULA/SERIE)",
         "precio": 6500,
-        "img": "../img/peliculas/wakanda.jpeg",
-        "cantidad": "por dia"
+        "img": "../img/peliculas/wakanda.jpeg"
+
     },
     {
         "id": 9,
         "nombre": "Bosque Encantado",
         "tipo": "(ESPECIAL)",
         "precio": 8000,
-        "img": "../img/especial/bosque.jpg",
-        "cantidad": "por dia"
+        "img": "../img/especial/bosque.jpg"
+
     },
     {
         "id": 10,
         "nombre": "El Universo",
         "tipo": "(ESPECIAL)",
         "precio": 7500,
-        "img": "../img/especial/espacio.jpg",
-        "cantidad": "por dia"
+        "img": "../img/especial/espacio.jpg"
+
     },
     {
         "id": 11,
         "nombre": "El Futuro",
         "tipo": "(ESPECIAL)",
         "precio": 8200,
-        "img": "../img/especial/futuro.jpg",
-        "cantidad": "por dia"
+        "img": "../img/especial/futuro.jpg"
+
     },
     {
         "id": 12,
         "nombre": "Hospital Abandonado",
         "tipo": "(ESPECIAL)",
         "precio": 9500,
-        "img": "../img/especial/hospital.jpg",
-        "cantidad": "por dia"
+        "img": "../img/especial/hospital.jpg"
+
     }
 ]
